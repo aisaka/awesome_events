@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
-gem 'sqlite3', '~> 1.3.9'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '~> 2.5.0'
 gem 'coffee-rails', '~> 4.0.1'
@@ -36,6 +35,14 @@ group :test do
   gem 'database_cleaner', '~> 1.2.0'
 end
 
+group :development, :test, :staging do
+  gem 'sqlite3', '~> 1.3.9'
+end
+
 group :staging, :production do
   gem 'unicorn'
+end
+
+group :production do
+  gem 'pg'
 end
